@@ -189,7 +189,6 @@ def fill_plane(plane):
             economy_sold = purchase_economy_block(plane,economy_sold,1+random.randrange(max_family_size),"u-%d"%u_number)
             u_number = u_number + 1
 
-        
     # once the plane reaches a certian seating capacity, assign
     # seats to the economy plus passengers
     # you will have to complete the seat_economy function
@@ -198,7 +197,34 @@ def fill_plane(plane):
         for i in range(economy_sold[name]):
             plane = seat_economy(plane,economy_sold,name)
 
-
+    # Eric Liu algo notes for plane seating
+    # Didn't have time to fully code anything but in order to implement my algorithm
+    # Lots going on with lesson planning, assessment planning, observation planning.
+    # Also personal stuff such as moving this past two weeks and also will be taking
+    # a paternity leave by mid November. So a lot of things adding up.
+    # I personally would simplify the whole algo and assumptions about booking.
+    # I kept mine simple. I've noticed that lots of algos will overthink human behavior
+    # when just a simple one would suffice. Code and systems are more manual than people think.
+    
+    # Just search for closest seat with the current number of seats requested next to each other.
+    # If found 3 seats in a row
+    #     book the seats in a family
+    # else not found
+    #     reduce the family size search by 1
+    #     add 1 to additional seat
+    #     redo search for open seats for family size minus 1 from previous
+    #     maybe recursion here or there may be max family size of 5 so just a loop
+    #     Once found for a specific family size group
+    #     find available seats for the leftover seats.
+    #        first search in the seats around the first seat, in front, behind, in front left, in front right, etc.
+    #        fill up and assign as close to original family. If no space open, move to next row until plan is searched.
+    #        If plane searched and cannot assign all seats, throw exception so it can be handled manually.
+    # 
+    # no regard to class of seat. I would implement markers for each seat instead. I would check the class of the seat and not
+    # consider it for economy if the market said economy plus members only. Then it's a manual intervention for an agent
+    # to decide if this family should get one person bumped up a class to fit in the plane.
+            
+            
     return plane
     
     
