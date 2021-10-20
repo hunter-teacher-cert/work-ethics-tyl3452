@@ -1,8 +1,6 @@
 # Final Project
 
 ## Participants
-- Alex
-- Iulian Irimina
 - Eric Liu
 
 ## Topic
