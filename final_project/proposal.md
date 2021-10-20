@@ -4,7 +4,7 @@
 - Eric Liu
 
 ## Topic
-- Google Photos / Photo Sharing Online
+- College admissions algorithm
 
 ## Program
 - ? Unsure. Possibly photo / ai recognition or sorting of photos
