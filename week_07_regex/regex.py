@@ -8,7 +8,7 @@ def find_name(line):
     # Decided to separate out seaches
 
     # If there is a title in the name
-    title_pattern = r"(Mr|Mrs|Ms|Mx|Dr)."
+    title_pattern = r"[MD][rsx][\.]?\s\w+\s\w+."
     result = re.findall(title_pattern,line)
 
     # If there is no title and has First + Last Name
@@ -16,7 +16,7 @@ def find_name(line):
 
     # If there is no title + Last name
     last_pattern = r""
-
+([^MD][^rsx][\.]?\s)?\w+\s\w+
 
     # pattern = r"(October|Oct|November|Nov)( \d{1,2}, \d{4})"
     # result = result + re.findall(pattern,line)
