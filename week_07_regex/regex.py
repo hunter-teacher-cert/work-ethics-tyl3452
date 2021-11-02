@@ -12,11 +12,14 @@ def find_name(line):
     result = re.findall(title_pattern,line)
 
     # If there is no title and has First + Last Name
-    first_last_pattern = r""
+    first_last_pattern = r"\w+\w+"
+    result = result + re.findall(first_last_pattern,line)
 
-    # If there is no title + Last name
-    last_pattern = r""
-([^MD][^rsx][\.]?\s)?\w+\s\w+
+
+    # There is title + Last name
+    last_pattern = r"([MD][rsx][\.]?\s)?\w+"
+    result = result + re.findall(last_pattern,line)
+
 
     # pattern = r"(October|Oct|November|Nov)( \d{1,2}, \d{4})"
     # result = result + re.findall(pattern,line)
